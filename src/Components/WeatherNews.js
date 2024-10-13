@@ -17,6 +17,7 @@ const WeatherNews = () => {
       setNews(response.data.articles);
       setLoading(false);
     } catch (err) {
+      console.error("Error fetching news: ", err.response ? err.response.data : err.message);
       setError("Error fetching news.");
       setLoading(false);
     }
